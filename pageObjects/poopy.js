@@ -1,27 +1,93 @@
-var asset = require('../testsAssets/newsAssets')
 var poopycommands = {
-    closePopup: function (){
+    closePopup: function () {
         this
+            .isVisible('[class="close-btn"]', function (result) {
+                this.click('[class="close-btn"]')
+            })
+    },
+    signIn: function () {
+        this
+            .navigate('https://accounts.wsj.com/login?target=')
+            .clearValue('@username')
+            .setValue('@username', 'stonepreston@ymail.com')
+            .clearValue('@password')
+            .setValue('@password', 'Home1305')
+            .click('@signInButton')
+        return this
     },
     search: function () {
         this
-            .waitForElementVisible('@searchButton', 50000)
+            .waitForElementPresent('@searchButton')
+            .click('@searchButton')
+            .setValue('@searchbox', 'tech')
+            .closePopup()
+            this.click('@searchButton2')
+        return this
+    },
+    // categoryTabs: function (tabs) {
+    //     this
+    //         .useXpath()
+    //         .click(`(//a[@class="style--section-link--3qFFDClt "])${tabs.number}`)
+    //         .useCss()
+    //         .expect.element('[class="clearfix"]').text.to.contain(`${tabs.name}`)
+        // this.expect.element('[class="WSJTheme--title-logo-section--1a976dMr "]').text.to.contain("https://www.wsj.com/news/magazine")
+    // },
+    savedArticles: function () {
+        this
+        let title = ''
+        // .pause()
+        this
+            .api.useXpath()
+        this
+            .waitForElementVisible('(//h3[@class="headline"])[1]')
+            .getText('(//h3[@class="headline"])[1]', function (result) {
+                title = result.value
+                console.log('Article name:', title)
+            })
             .useXpath()
-            .waitForElementVisible('//a[@href="https://accounts.wsj.com/login?target="]')
-            .click('//a[@href="https://accounts.wsj.com/login?target="]')
+            // if (('(//div[@class="category"])[1]').containsText('Video')){
+            //     this.click('(//h3[@class="headline"])[2]')
+            // } else {
+            //     this.click('(//h3[@class="headline"])[1]')
+            // }
+            .click('(//h3[@class="headline"])[1]')
             .useCss()
-            .clearValue('@username')
-            .setValue('@username', 'stonepreston05@gmail.com')
-            .clearValue('@password')
-            .setValue('@password', 'Home1305')
+            .pause(1000)
+            .useXpath()
+            .click('(//div[@class="WSJTheme__tool-icon_3LQkxF9zM6Dss575JNV6dI "])[1]')
+            .useCss()
+            .click('@accountButton')
+            .useXpath()
+            .pause(1000)
+            .click('(//li[@class="style__customer-nav-items_q8m_wCZgM33fd-u1fYYoL "])[4]')
+            .useCss()
+            .pause(1000)
+            .waitForElementVisible('[class="content-wrapper"]')
+            .pause(1000)
+            .perform(() => {
+                this.verify.containsText('[class="content-wrapper"]', title)
+            })
+        return this
+    },
+    clearSaved: function () {
+        this
+            .useXpath()
+            .click('(//a[@id="editButton"])[1]')
+            .click('(//li[@class="delete-undo"])')
+            .click('//a[@class="done"]')
+            .useCss()
+        return this
+    },
+    plop: function () {
+
     }
 }
 module.exports = {
     url: 'https://www.wsj.com',
-    commands: [poopycommands, asset],
+    commands: [poopycommands],
     elements: {
         searchButton: '[class="style--search-button--1U43LWwP "]',
-        searchbox: '[id="searchInput"]',
+        searchbox: '[placeholder="Enter News, Quotes, Companies or Videos"]',
         signIn: {
             selector: '//a[@href="https://accounts.wsj.com/login?target="]',
             locateStrategy: 'xpath'
@@ -33,5 +99,7 @@ module.exports = {
             locateStrategy: 'xpath',
         },
         signInButton: '[class="solid-button basic-login-submit"]',
+        searchButton2: '[class="style--search-submit--36AD7RDg "]',
+        accountButton: '[class="style__fullname_3RYDOD92IoqSzkhjexp6sF "]'
     }
 }
