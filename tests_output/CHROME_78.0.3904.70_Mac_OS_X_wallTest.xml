@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="3">
+
+  <testsuite name="wallTest"
+    errors="0" failures="0" hostname="" id="" package="wallTest" skipped="0"
+    tests="3" time="47.00" timestamp="">
+  
+    <testcase name="sign in" classname="wallTest" time="12.41" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="search" classname="wallTest" time="10.05" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="saved articles" classname="wallTest" time="24.53" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

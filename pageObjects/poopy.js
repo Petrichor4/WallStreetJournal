@@ -20,8 +20,8 @@ var poopycommands = {
             .waitForElementPresent('@searchButton')
             .click('@searchButton')
             .setValue('@searchbox', 'tech')
-            .closePopup()
-            this.click('@searchButton2')
+        // .closePopup()
+        this.click('@searchButton2')
         return this
     },
     // categoryTabs: function (tabs) {
@@ -30,7 +30,7 @@ var poopycommands = {
     //         .click(`(//a[@class="style--section-link--3qFFDClt "])${tabs.number}`)
     //         .useCss()
     //         .expect.element('[class="clearfix"]').text.to.contain(`${tabs.name}`)
-        // this.expect.element('[class="WSJTheme--title-logo-section--1a976dMr "]').text.to.contain("https://www.wsj.com/news/magazine")
+    // this.expect.element('[class="WSJTheme--title-logo-section--1a976dMr "]').text.to.contain("https://www.wsj.com/news/magazine")
     // },
     savedArticles: function () {
         this
@@ -44,28 +44,37 @@ var poopycommands = {
                 title = result.value
                 console.log('Article name:', title)
             })
-            .useXpath()
+            this.api.useXpath()
+        
             // if (('(//div[@class="category"])[1]').containsText('Video')){
             //     this.click('(//h3[@class="headline"])[2]')
             // } else {
             //     this.click('(//h3[@class="headline"])[1]')
             // }
-            .click('(//h3[@class="headline"])[1]')
-            .useCss()
-            .pause(1000)
-            .useXpath()
-            .click('(//div[@class="WSJTheme__tool-icon_3LQkxF9zM6Dss575JNV6dI "])[1]')
-            .useCss()
+            this.api.pause(10000)
+            this.waitForElementVisible('(//h3[@class="headline"])[1]', 200000)
+            this.click('(//h3[@class="headline"])[1]')
+            // .api.useCss()
+            this.api.pause(5000)
+            this.waitForElementPresent('(//span[contains(text(), "Save")])[2]', 2000)
+            this.click('(//span[contains(text(), "Save")])[2]')
+            // this.waitForElementVisible('(//li[@WSJTheme__tool_d7-0lZbdKxib8fS9OSHB WSJTheme__save-tool_17Qf7SZmap6IDfQ75OykwG "])[1]', 200000)
+            // this.click('(//li[@WSJTheme__tool_d7-0lZbdKxib8fS9OSHB WSJTheme__save-tool_17Qf7SZmap6IDfQ75OykwG "])[1]')
+            .api.useCss()
+            this
             .click('@accountButton')
-            .useXpath()
+            .api.useXpath()
+            this
             .pause(1000)
             .click('(//li[@class="style__customer-nav-items_q8m_wCZgM33fd-u1fYYoL "])[4]')
-            .useCss()
+            .api.useCss()
+            this
             .pause(1000)
             .waitForElementVisible('[class="content-wrapper"]')
             .pause(1000)
             .perform(() => {
-                this.verify.containsText('[class="content-wrapper"]', title)
+                this.verify.containsText('[class="content-wrapper"]', "1 Saved Articles EDIT")
+                // this.verify.containsText('[class="items"]', title)
             })
         return this
     },
