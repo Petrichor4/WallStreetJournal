@@ -1,37 +1,4 @@
-var inputs = [
-    {
-        in: 'lanjdlkjanlskdjnf',
-        Out: 'lanjdlkjanlskdjnf'
-    },
-    {
-        in: 'djfaskdsnfaksfjs',
-        out: 'djfaskdsnfaksfjs'
-    },
-    {
-        in: 'jhjhjhjhjhjh',
-        out: 'jhjhjhjhjhjh'
-    },
-    {
-        in: 'blahblhblahblah',
-        out: 'blahblhblahblah'
-    },
-    {
-        in:'hLHlLHlLHLhlwefl',
-        out:'hLHlLHlLHLhlwefl'
-    },
-    {
-        in:'lohlohlhohlhohlhoh',
-        out:'lohlohlhohlhohlhoh'
-    },
-    {
-        in: 'aggagadsgasdgasdga',
-        out:'aggagadsgasdgasdga'
-    },
-    {
-        in: 'hDF3CEadsefqdwfs',
-        out:'hDF3CEadsefqdwfs'
-    }
-]
+var inputs = require('../testAssets/newsAssets')
 module.exports = {
     before: browser => {
         browser.url('https://devmountain-qa.github.io/enter-wanted/1.3_Assignment/index.html')
@@ -45,12 +12,10 @@ module.exports = {
             .getText('(//span[@class="placeholderText"])[2]', function (result) {
                 text = result.value
                 console.log('text is:', result.value)
-                for (i = 1; i < 17; i++) {
+                for (i = 1; i < 18; i++) {
                     browser.useXpath()
-                    browser.forEach(test => {
-                        browser.setValue(`(//input[@class="materialInput"])[${i}]`, inputs.in)
-                            .verify.value(`(//input[@class="materialInput"])[${i}]`, ipnuts.out)
-                    })
+                        browser.setValue(`(//input[@class="materialInput"])[${i}]`, `${i}`)
+                            .verify.value(`(//input[@class="materialInput"])[${i}]`, `${i}`)
                 }
             })
     }

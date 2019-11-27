@@ -1,32 +1,34 @@
-module.exports = [
-{
-    number:'[1]'
-},
-{
-    number:'[2]'
-},
-{
-    number:'[3]'
-},
-{
-    number:'[4]'
-},
-{
-    number:'[5]'
-},
-{
-    number:'[6]'
-},
-{
-    number:'[7]'
-},
-{
-    number:'[8]'
-},
-{
-    number:'[9]'
-},
-{
-    number:'[10]'
-},
+module.exports =  [
+    {
+        in: 'lanjdlkjanlskdjnf',
+        Out: 'lanjdlkjanlskdjnf'
+    },
+    {
+        in: 'djfaskdsnfaksfjs',
+        out: 'djfaskdsnfaksfjs'
+    },
+    {
+        in: 'jhjhjhjhjhjh',
+        out: 'jhjhjhjhjhjh'
+    },
+    {
+        in: 'blahblhblahblah',
+        out: 'blahblhblahblah'
+    },
+    {
+        in:'hLHlLHlLHLhlwefl',
+        out:'hLHlLHlLHLhlwefl'
+    },
+    {
+        in:'lohlohlhohlhohlhoh',
+        out:'lohlohlhohlhohlhoh'
+    },
+    {
+        in: 'aggagadsgasdgasdga',
+        out:'aggagadsgasdgasdga'
+    },
+    {
+        in: 'hDF3CEadsefqdwfs',
+        out:'hDF3CEadsefqdwfs'
+    }
 ]
