@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="6"
+            failures="2"
+            tests="3">
+
+  <testsuite name="wallTest"
+    errors="6" failures="2" hostname="" id="" package="wallTest" skipped="0"
+    tests="3" time="72.06" timestamp="">
+  
+    <testcase name="sign in" classname="wallTest" time="11.98" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="search" classname="wallTest" time="10.49" assertions="4">
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="saved articles" classname="wallTest" time="49.59" assertions="5">
+
+    
+
+    
+
+      <failure message="Testing if element &lt;//h2//a&gt; contains text: &#34;Tech, Media &amp; Telecom Roundup: Market Talk&#34;. Element could not be located in 1000 ms. - expected [0;32m&#34;Tech, Media &amp; Telecom Roundup: Market Talk&#34;[0m but got: [0;31m&#34;null&#34;[0m">    at Object.pause.pause.perform (/Users/Josephstone/DevMountain/WallStreetJournal/pageObjects/poopy.js:79:29)</failure>
+
+      <failure message="Timed out while waiting for element &lt;[class=&#34;has-no-saved-content&#34;]&gt; to be present for 5000 milliseconds. - expected [0;32m&#34;found&#34;[0m but got: [0;31m&#34;not found&#34;[0m">    at Object.saved articles (/Users/Josephstone/DevMountain/WallStreetJournal/tests/wallTest.js:33:14)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>

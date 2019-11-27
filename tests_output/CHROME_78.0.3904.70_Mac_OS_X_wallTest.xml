@@ -5,14 +5,14 @@
 
   <testsuite name="wallTest"
     errors="0" failures="0" hostname="" id="" package="wallTest" skipped="0"
-    tests="3" time="47.00" timestamp="">
+    tests="3" time="35.81" timestamp="">
   
-    <testcase name="sign in" classname="wallTest" time="12.41" assertions="1">
+    <testcase name="sign in" classname="wallTest" time="10.58" assertions="1">
 
     
     </testcase>
   
-    <testcase name="search" classname="wallTest" time="10.05" assertions="4">
+    <testcase name="search" classname="wallTest" time="8.555" assertions="4">
 
     
 
@@ -23,9 +23,7 @@
     
     </testcase>
   
-    <testcase name="saved articles" classname="wallTest" time="24.53" assertions="7">
-
-    
+    <testcase name="saved articles" classname="wallTest" time="16.68" assertions="6">
 
     
 

@@ -51,7 +51,8 @@ var poopycommands = {
             // } else {
             //     this.click('(//h3[@class="headline"])[1]')
             // }
-            this.api.pause(10000)
+            this.api.pause(1000)
+            this.moveToElement('(//h3[@class="headline"])[1]', 0, 0)
             this.waitForElementVisible('(//h3[@class="headline"])[1]', 200000)
             this.click('(//h3[@class="headline"])[1]')
             // .api.useCss()
@@ -70,11 +71,12 @@ var poopycommands = {
             .api.useCss()
             this
             .pause(1000)
-            .waitForElementVisible('[class="content-wrapper"]')
+            // .waitForElementVisible('[class="content-wrapper"]')
             .pause(1000)
             .perform(() => {
-                this.verify.containsText('[class="content-wrapper"]', "1 Saved Articles EDIT")
-                // this.verify.containsText('[class="items"]', title)
+                // this.verify.containsText('[class="content-wrapper"]', "1 Saved Articles EDIT")
+                this.useXpath()
+                this.verify.containsText('//h2//a', title)
             })
         return this
     },
