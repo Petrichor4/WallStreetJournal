@@ -1,6 +1,6 @@
 module.export = {
     beforeEach: browser => {
-        browser.url('https://www.netflix.com/')
+        browser.url('https://www.youtube.com')
     },
     after: browser => {
         browser.end()

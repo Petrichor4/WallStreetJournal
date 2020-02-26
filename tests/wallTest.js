@@ -14,7 +14,10 @@ module.exports = {
     //goes to home page of wall street journal then navigates to the sign in page(the selector for sign in would not cooperate).
         news
             .signIn()
-        news.expect.element('[class="style--customer-nav-login-closed--2D4pebKj "]').to.contain.text('Joe Stone')
+            .useXpath()
+            .waitForElementVisible('//*[@id="root"]/div/div/div/div[1]/header/div[1]/div/div[1]/div[1]/a')
+        news.expect.element('//*[@id="root"]/div/div/div/div[1]/header/div[1]/div/div[1]/div[1]/a').to.contain.text('Joe Stone')
+            news.useCss()
     },
     "search": browser => {
         news

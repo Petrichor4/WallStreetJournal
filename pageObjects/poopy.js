@@ -7,11 +7,16 @@ var poopycommands = {
     },
     signIn: function () {
         this
-            .navigate('https://accounts.wsj.com/login?target=')
+            .useXpath()
+            .waitForElementPresent('//*[@id="root"]/div/div/div/div[1]/header/div[1]/div/div[1]/div/a[2]')
+            .click('//*[@id="root"]/div/div/div/div[1]/header/div[1]/div/div[1]/div/a[2]')
+            // .navigate('//*[@id="root"]/div/div/div/div[1]/header/div[1]/div/div[1]/div/a[2]')
+            .useCss()
             .clearValue('@username')
             .setValue('@username', 'stonepreston@ymail.com')
             .clearValue('@password')
             .setValue('@password', 'Home1305')
+            .pause(3000)
             .click('@signInButton')
         return this
     },

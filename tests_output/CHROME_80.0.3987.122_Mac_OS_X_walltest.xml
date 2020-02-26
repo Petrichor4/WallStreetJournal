@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="2">
+
+  <testsuite name="walltest"
+    errors="1" failures="1" hostname="" id="" package="walltest" skipped="1"
+    tests="2" time="37.88" timestamp="">
+  
+    <testcase name="sign in" classname="walltest" time="24.55" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="search" classname="walltest" time="13.33" assertions="4">
+
+    
+
+    
+
+      <failure message="Testing if element &lt;(//div[@class=&#34;zonedModule&#34;])[6]&gt; contains text: &#34;Technology&#34; in 1000 ms. - expected [0;32m&#34;Technology&#34;[0m but got: [0;31m&#34;SEARCH
+ADVANCED SEARCH&#34;[0m">    at Object.search (/Users/Josephstone/DevMountain/WallStreetJournal/tests/walltest.js:28:21)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="saved articles" classname="walltest">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>
